@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>JavaScript Asynchronous Concepts</title>
+</head>
+<body>
+    <div class="container">
+        <h1>JavaScript Asynchronous Concepts</h1>
+        <div class="box">
+            <h2>Document Object Model (DOM)</h2>
+            <p><b>What is the DOM?</b></p>
+            <p>The Document Object Model (DOM) is a programming interface for web documents. It represents the structure of a webpage as a tree-like hierarchy, allowing JavaScript to manipulate HTML and CSS dynamically.</p>
+            <p><b>Commonly Used DOM Methods:</b></p>
+            <ul>
+            <li><b>document.getElementById(id):</b> Selects an element by its ID.</li>
+            <li><b>document.getElementsByClassName(class):</b> Selects elements by their class name.</li>
+            <li><b>document.getElementsByTagName(tag):</b> Selects elements by their tag name.</li>
+            <li><b>document.querySelector(selector):</b> Selects the first element matching a CSS selector.</li>
+            <li><b>document.querySelectorAll(selector):</b> Selects all elements matching a CSS selector.</li>
+            <li><b>element.innerHTML:</b> Modifies the HTML content inside an element.</li>
+            <li><b>element.textContent:</b> Modifies the text content inside an element.</li>
+            <li><b>element.style.property:</b> Modifies an element's CSS styles.</li>
+            <li><b>element.setAttribute(name, value):</b> Sets an attribute on an element.</li>
+            <li><b>element.removeAttribute(name):</b> Removes an attribute from an element.</li>
+            <li><b>element.classList.add(className):</b> Adds a CSS class to an element.</li>
+            <li><b>element.classList.remove(className):</b> Removes a CSS class from an element.</li>
+            <li><b>element.addEventListener(event, function):</b> Attaches an event listener to an element.</li>
+            </ul>
+            <p><b>Examples:</b></p>
+            <code>
+        // Changing text content
+        document.getElementById("demo").textContent = "Hello, DOM!";
+            </code>
+            <code>
+        // Changing styles
+        document.querySelector(".box").style.backgroundColor = "blue";
+            </code>
+            <code>
+        // Adding an event listener
+        document.getElementById("myButton").addEventListener("click", function() {
+            alert("Button Clicked!");
+        });
+            </code>
+            <code>
+        // Creating a new element
+        newParagraph.textContent = "This is a new paragraph.";
+        let newParagraph = document.createElement("p");
+        document.body.appendChild(newParagraph);
+            </code>
+            <code>
+        // Removing an element
+        elementToRemove.parentNode.removeChild(elementToRemove);
+        let elementToRemove = document.getElementById("demo");
+            </code>
+            <code>
+        // Modifying attributes
+        image.setAttribute("src", "new-image.jpg");
+        let image = document.getElementById("myImage");
+            </code>
+            <code>
+        // Toggling a class
+        document.getElementById("box").classList.toggle("highlight");
+            </code>
+        </div>
+    </div>
+</body>
+</html>
