@@ -10,21 +10,29 @@ const users = [
     { username: "user9", password: "pass9" },
     { username: "user10", password: "pass10" },
 ];
+
+// Store users in local storage if not already set
 if (!localStorage.getItem("users")) {
     localStorage.setItem("users", JSON.stringify(users));
 }
+
 function login() {
-    let username = document.getElementById("username").value;
-    let password = document.getElementById("password").value;
+    let username = document.getElementById("login-username").value;
+    let password = document.getElementById("login-password").value;
+
     let users = JSON.parse(localStorage.getItem("users")) || [];
+
     let validUser = users.find(user => user.username === username && user.password === password);
+
     if (validUser) {
         alert("Login successful!");
-        window.location.href = "home.html";
+        localStorage.setItem("currentUser", username); // Store current user
+        window.location.href = "home.html"; // Redirect to home page
     } else {
         alert("Invalid username or password");
     }
 }
+
 function checkLogin() {
     let currentUser = localStorage.getItem("currentUser");
     if (!currentUser) {
