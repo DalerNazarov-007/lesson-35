@@ -11,7 +11,6 @@ const users = [
     { username: "user10", password: "pass10" },
 ];
 
-// Store users in local storage if not already set
 if (!localStorage.getItem("users")) {
     localStorage.setItem("users", JSON.stringify(users));
 }
@@ -26,8 +25,8 @@ function login() {
 
     if (validUser) {
         alert("Login successful!");
-        localStorage.setItem("currentUser", username); // Store current user
-        window.location.href = "home.html"; // Redirect to home page
+        localStorage.setItem("currentUser", username);
+        window.location.href = "shome.html";
     } else {
         alert("Invalid username or password");
     }
